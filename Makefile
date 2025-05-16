@@ -1,4 +1,5 @@
-TARGET = http1.1-client
+TARGET = http-client
+SRC_DIR = ./src
 BUILD_DIR = ./build
 CC = gcc
 
@@ -7,9 +8,9 @@ all: $(TARGET)
 run:
 	$(BUILD_DIR)/$(TARGET)
 
-$(TARGET): main.c
+$(TARGET): $(SRC_DIR)/main.c $(SRC_DIR)/conn.c $(SRC_DIR)/utils.c
 	mkdir -p $(BUILD_DIR)
-	$(CC) main.c -o $(BUILD_DIR)/$(TARGET)
+	$(CC) $^ -o $(BUILD_DIR)/$(TARGET)
 
 clean:
 	rm build/*
