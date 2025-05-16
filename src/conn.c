@@ -34,8 +34,8 @@ FileDesc establish_connection(const char* target_address) {
 
 
     struct sockaddr_in target_addr = sockaddr_from_host(target_address, 80);
-
-    printf("Establishing connection to %s on port %d\n", target_address, target_addr.sin_port);
+    
+    printf("Establishing connection to %s on port %d\n", target_address, ntohs(target_addr.sin_port));
 
     if (connect(sock, (struct sockaddr*) &target_addr, sizeof(target_addr)) < 0) {
         syscall_err("connect");
