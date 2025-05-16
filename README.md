@@ -8,3 +8,8 @@ This is a _learning repo_, meaning that it's main purpose is to learn about the 
 - `GNU libc` (you probably already have it)
 - *NIX operating system
 
+## Build
+Simply run `make`
+
+## Usage
+`./build/http-client <ipv4>`
