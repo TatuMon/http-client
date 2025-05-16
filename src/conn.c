@@ -11,7 +11,7 @@ const int TCP_PROTOCOL = 6; // Got from greping /etc/protocols
 struct sockaddr_in sockaddr_from_host(const char* host, int port) {
     struct sockaddr_in sockaddr;
     sockaddr.sin_family = AF_INET;
-    sockaddr.sin_port = port;
+    sockaddr.sin_port = htons(port);
 
     if (inet_aton(host, &sockaddr.sin_addr) < 1) {
         syscall_err("inet_aton");

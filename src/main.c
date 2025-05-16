@@ -17,5 +17,5 @@ int main(int argc, char** argv) {
     socklen_t len = sizeof(client_addr);
     getsockname(client_socket, (struct sockaddr*) &client_addr, &len);
 
-    printf("Port is %d\n", ntohs(client_addr.sin_port));
+    printf("Client socket port is %d\n", ntohs(client_addr.sin_port));
 }
