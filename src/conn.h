@@ -4,6 +4,6 @@
 #include <stdio.h>
 typedef int FileDesc;
 
-FileDesc establish_connection(const char* target_address);
+FileDesc establishConnection(const char* target_address, const char *port);
 
 #endif
