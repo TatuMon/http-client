@@ -12,4 +12,4 @@ This is a _learning repo_, meaning that it's main purpose is to learn about the 
 Simply run `make`
 
 ## Usage
-`./build/http-client <ipv4>`
+`./build/http-client <host>`
