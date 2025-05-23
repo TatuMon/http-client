@@ -59,10 +59,10 @@ FileDesc establishConnection(const char *target_address, const char *port) {
     syscall_err("socket");
   }
 
-  struct addrinfo **targetPossibleAddresses;
-  addrInfoFromHost(target_address, port, targetPossibleAddresses);
+  struct addrinfo *targetPossibleAddresses;
+  addrInfoFromHost(target_address, port, &targetPossibleAddresses);
 
-  if (tryConnect(targetPossibleAddresses) == -1) {
+  if (tryConnect(&targetPossibleAddresses) == -1) {
     exit_err("failed to connect");
   }
 
